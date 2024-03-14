@@ -1,0 +1,67 @@
+<div class="form-container">
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div>
+      <input
+        type="text"
+        name="fullname"
+        [(ngModel)]="fullname"
+        placeholder="Enter your fullname"
+        required
+      />
+      <div *ngIf="form.submitted && !fullname" class="error">
+        Fullname is required
+      </div>
+    </div>
+    <br />
+    <div>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+        required
+      />
+      <div *ngIf="form.submitted && !email" class="error">
+        Email is required
+      </div>
+    </div>
+    <br />
+    <div class="alig">
+      <input
+        type="number"
+        name="phonePrefix"
+        [(ngModel)]="phonePrefix"
+        placeholder="Phone prefix"
+        required
+      />
+      <input
+        type="number"
+        name="phoneNumber"
+        [(ngModel)]="phoneNumber"
+        placeholder="Enter your phone number"
+        required
+      />
+      <div
+        *ngIf="form.submitted && (!phonePrefix || !phoneNumber)"
+        class="error"
+      >
+        Complete phone number is required
+      </div>
+    </div>
+    <br />
+    <div>
+      <input
+        type="text"
+        name="creditCard"
+        [(ngModel)]="creditCard"
+        placeholder="Enter credit card information"
+        required
+      />
+      <div *ngIf="form.submitted && !creditCard" class="error">
+        Credit card information is required
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="input">Submit</button>
+  </form>
+</div>
